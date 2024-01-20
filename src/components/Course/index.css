@@ -1,0 +1,149 @@
+.pageTitle
+{
+    padding: 1em 2rem;
+    font-weight:900;
+}
+
+.coursePageUpperList ul
+{
+    display: flex;
+    list-style-type: none;
+    margin-left: 1rem;
+}
+
+.coursePageUpperList ul li
+{
+    border: 1px solid gray;
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+    margin-left: 0.6rem;
+}
+
+.coursePageUpperList ul li:hover
+{
+    /* background-color: #3498db; */
+    background-color: #3498db83;
+}
+
+.activeCourseTab
+{
+    background-color: #3498db;
+    color: white;
+    font-weight: bolder;
+}
+
+
+
+
+/******************** ADD COURSE ***********************/
+
+.addCoursePage
+{
+    height: 20vh;
+    padding: 4rem 0;
+    width: 70%;
+    background-color: #ecf0f16d;
+    margin-left: 15%;
+    margin-top: 2rem;
+    box-shadow: 0 0 15px rgba(128, 128, 128, 0.354);
+}
+
+.addCoursePage div
+{
+    margin: 0 5rem;
+}
+
+.addCoursePage label
+{
+    font-weight: bold;
+    margin-right: 2rem;
+}
+
+.addCoursePage label input, .addCoursePage label select
+{
+    outline: none;
+    padding: 0.5rem 1rem;
+}
+
+.addCoursePage label select
+{
+    width: 20%;
+    margin-left: 0.2rem;
+}
+
+.addCourseBtn
+{
+    border: none;
+    background-color: #3498db;
+    padding: 0.6rem;
+    font-weight: bolder;
+    width: 40%;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+
+
+
+/*************************** VIEW ALL COURSES ************************************/
+
+.allCoursesPage table {
+    width: 90%;
+    margin:2rem 5%;
+  }
+  .allCoursesPage th {
+    background-color: white;
+    padding: 1.7rem 10px;
+  }
+  .allCoursesPage td {
+    padding: 8px 0;
+  }
+  
+  .allCoursesPage th,
+  .allCoursesPage td {
+    padding: 6px;
+    text-align: left;
+  }
+  
+  .allCoursesPage th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  .allCoursesPage button
+  {
+    border: none;
+    padding: 0.3rem 0.6rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .allCoursesPage button:hover
+  {
+    opacity: 80%;
+    transition: 0.4s ease;
+  }
+
+  .exportButton
+  {
+    display: flex;
+    align-items: center;
+    background-color: #2ecc71;
+    width: 15%;
+    justify-content: center;
+    font-weight: bold;
+    padding: 0.4rem 0;
+    float: right;
+    margin-right: 4rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+
+  .exportButton:hover
+  {
+    color: white;
+  }
+
+  .exportButton p{
+    margin-right: 0.5rem;
+  }

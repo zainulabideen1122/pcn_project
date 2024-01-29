@@ -1,19 +1,41 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import './index.css'
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import store from '../../store';
+
 function Login (){
+
+    const dispatch = useDispatch();
+
+    const [wrongAlert, setWrongAlert] = useState('');
+    const wrongCredentialMsg = "Wrong email or password!";
+
+    
 
     const [credentials, setCredentials] = useState({email :'', password:''})
     const navigate = useNavigate();
 
     const handleLogin = ()=>{
-        // if(!credentials.email || !credentials.password)
-        // {
-        //     alert("Please fill up all fields!")
-        // }
-        //else
+        const users = store.getState().users;
+        console.log(users);
+
+        const obj = users.find((o,i)=>
+            o.email === credentials.email && o.password === credentials.password
+        )
+
+        if(obj === undefined)
         {
-            console.log(credentials);
+            setWrongAlert(wrongCredentialMsg);
+            setCredentials({email:'', password:''})
+        }
+        else
+        {
+            //console.log(credentials);
+            dispatch({
+                type : 'login/loginTrue',
+                payload : {isLogin : true, user : obj}
+            })
             navigate("/");
         }
     }
@@ -35,6 +57,7 @@ function Login (){
                         <button style={{borderColor:"#27ae60"}} className='loginButton' onClick={handleLogin}>Login</button>
                         <button className='RegisterButton' onClick={handleRegister}>Register</button>
                     </div>
+                    <span className='wrongCredentialsText'>{wrongAlert}</span>
                 </div>
             </section>
         </>

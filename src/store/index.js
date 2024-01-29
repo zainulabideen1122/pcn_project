@@ -2,31 +2,59 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const loginSlice = createSlice({
     name : 'login',
-    initialState:[],
+    initialState:{
+        isLogin:false, 
+        user : ''
+    },
     reducers:{
-        isLoginTrue(state, action){
+        loginTrue(state, action){
             //login true
-            state.push({isLogin:true, user : action.payload})
+            state.isLogin = action.payload.isLogin;
+            state.user = action.payload.user;
         },
-        isLoginFalse(state, action){
+        loginFalse(state, action){
             //login false
             //return state = false
+            state.isLogin = false;
+            state.user = '';
         }
 
     }
 })
 
-const store = configureStore({
-    reducer : {
-        isLogin : loginSlice.reducer
+const userSlice = createSlice({
+    name : 'user',
+    initialState : [{
+        name : 'Zain',
+        email : 'zain@gmail.com',
+        password : 'zain123'
+    }],
+    reducers : {
+        addUser (state, action){
+            state.push(action.payload);
+        },
+        updateUser(state, action){
+            //update the user
+        },
+        removeUser(state, action)
+        {
+            //remove user
+        }
     }
 })
 
-store.dispatch({
-    type:'login/isLoginTrue',
-    payload : {name : "Zain", email:"Zainnisarmughal@gmail.com", password : "Zain123"}
+const store = configureStore({
+    reducer : {
+        loginUser : loginSlice.reducer,
+        users : userSlice.reducer
+    }
 })
 
-console.log(store.getState())
+// store.dispatch({
+//     type:'login/loginTrue',
+//     payload : {isLogin:true, user:{name : "Zain", email:"Zainnisarmughal@gmail.com", password : "Zain123"}}
+// })
 
-// export default {store};
+// console.log(store.getState())
+
+ export default store;

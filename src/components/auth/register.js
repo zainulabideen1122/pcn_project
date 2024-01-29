@@ -1,8 +1,11 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import './index.css'
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import store from '../../store';
 function Register (){
 
+    const dispatch = useDispatch();
     const [user, setUser] = useState({fName:'', lName:'', email:'', password:''})
 
     const navigate = useNavigate();
@@ -12,8 +15,26 @@ function Register (){
     }
 
     const handleRegister = ()=>{
-        console.log(user);
+        // console.log(user);
+        // navigate("/");
+
+        const newUser = {
+            name : user.fName + " " + user.lName,
+            email : user.email,
+            password : user.password
+        }
+        dispatch({
+            type:'user/addUser',
+            payload : newUser
+        })
+
+        dispatch({
+            type : 'login/loginTrue',
+            payload : {isLogin : true, user : newUser}
+        })
         navigate("/");
+
+        console.log(store.getState().users)
     }
 
     return(

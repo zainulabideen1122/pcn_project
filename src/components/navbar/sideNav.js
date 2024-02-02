@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from "react-router-dom";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { FaUserFriends } from "react-icons/fa";
 import { IoMdHome } from "react-icons/io";
 import { GoContainer } from "react-icons/go";
 
@@ -12,21 +12,20 @@ function SideNav(){
     return(<>
         <section className="sideNavbar">
             <ul>
-                <li>
+                <li className={location.pathname==='/'?'activeLink' : ''}>
                     <NavLink to="/" >
-                        <p className={location.pathname==='/'?'activeLink' : ''}><IoMdHome style={{paddingRight:"0.6rem"}}/>Home</p>
+                        <p ><IoMdHome style={{paddingRight:"0.6rem"}}/>Home</p>
                         {/* <MdKeyboardArrowRight style={{marginLeft:"auto"}} size={27}/> */}
                     </NavLink>
                 </li>
-                <li>
+                <li className={location.pathname==='/courses'?'activeLink' : ''}>
                     <NavLink to="/courses">
-                        <p className={location.pathname==='/courses'?'activeLink' : ''}><GoContainer style={{paddingRight:"0.6rem"}} />Course</p>
+                        <p ><GoContainer style={{paddingRight:"0.6rem"}} />Course</p>
                     </NavLink>
                 </li>
-                <li>
-                    <NavLink to="/option2">
-                        <p>Option2</p>
-                        
+                <li className={location.pathname==='/faculty'?'activeLink' : ''}>
+                    <NavLink to="/faculty">
+                        <p><FaUserFriends style={{paddingRight:"0.6rem"}} />Faculty</p>
                     </NavLink>
                 </li>
             </ul>

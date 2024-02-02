@@ -6,7 +6,7 @@
     font-family: 'Manrope', sans-serif;
 }
 .upperNav-ul{
-    background-color: #3498db;
+    background-color: #0B60B0;
     color: white;
     margin: 0;
     position: sticky;
@@ -37,7 +37,12 @@
     font-weight: bold;
 }
 
-
+.loginButton
+{
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
 
 
 
@@ -46,8 +51,8 @@
 
 /* *************************** SIDE NAVBAR CSS ******************* */
 .sideNavbar{
-    width: 18%;
-    background: #00000027;
+    width: 16%;
+    background: #EEEDEB;
     height: 92.6vh;
     position: fixed;
     left: 0;
@@ -55,7 +60,7 @@
 
 .sideNavbar ul li
 {
-    border-bottom: 1.5px solid rgba(0, 0, 0, 0.313);
+    /* border-bottom: 1.5px solid rgba(0, 0, 0, 0.313); */
     text-align: center;
 }
 
@@ -88,4 +93,5 @@
 .activeLink{
     font-weight: bold;
     color: #3498db;
+    border-left: 7px solid #0B60B0;
 }

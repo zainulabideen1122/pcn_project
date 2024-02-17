@@ -2,6 +2,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { FaUserFriends } from "react-icons/fa";
 import { IoMdHome } from "react-icons/io";
 import { GoContainer } from "react-icons/go";
+import CheckPermission from "../checkPermission";
 
 
 
@@ -23,11 +24,13 @@ function SideNav(){
                         <p ><GoContainer style={{paddingRight:"0.6rem"}} />Course</p>
                     </NavLink>
                 </li>
+                <CheckPermission>
                 <li className={location.pathname==='/faculty'?'activeLink' : ''}>
                     <NavLink to="/faculty">
                         <p><FaUserFriends style={{paddingRight:"0.6rem"}} />Faculty</p>
                     </NavLink>
                 </li>
+                </CheckPermission>
             </ul>
         </section>
     </>)

@@ -1,4 +1,5 @@
 import Navigation from "../navbar/Navigation";
+import PrivateRoute from "../privateRoute";
 import AddCourse from "./addCourse";
 import AllCourses from "./allCourses";
 import './index.css'

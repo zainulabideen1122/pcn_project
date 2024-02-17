@@ -4,6 +4,7 @@ import Login from "./components/auth/login";
 import Register from "./components/auth/register";
 import Course from "./components/Course";
 import Faculty from "./components/Faculty";
+import PrivateRoute from "./components/privateRoute";
 
 
 function App() {
@@ -11,11 +12,16 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" Component={Home} />
+        
         <Route  path="/auth/login" Component={Login} />
         <Route  path="/auth/register" Component={Register} />
-        <Route  path="/courses" Component={Course}/>
-        <Route  path="/faculty" Component={Faculty}/>
+        <Route exact path="/" Component={Home} />
+        <Route element={<PrivateRoute/>}>
+          
+          <Route  path="/courses" Component={Course}/>
+          <Route  path="/faculty" Component={Faculty}/>
+        </Route>
+
       </Routes>
     </Router>
   );

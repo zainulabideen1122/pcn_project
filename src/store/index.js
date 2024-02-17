@@ -17,6 +17,7 @@ const loginSlice = createSlice({
             //return state = false
             state.isLogin = false;
             state.user = '';
+            console.log("inner dispatch called")
         }
 
     }
@@ -27,7 +28,8 @@ const userSlice = createSlice({
     initialState : [{
         name : 'Zain',
         email : 'zain@gmail.com',
-        password : 'zain123'
+        password : 'zain123',
+        
     }],
     reducers : {
         addUser (state, action){
